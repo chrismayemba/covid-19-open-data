@@ -130,15 +130,6 @@ def _process_partition(cases: DataFrame) -> DataFrame:
 
 
 class BrazilDataSource(DataSource):
-    def fetch(
-        self,
-        output_folder: Path,
-        cache: Dict[str, str],
-        fetch_opts: List[Dict[str, Any]],
-        skip_existing: bool = False,
-    ) -> Dict[Any, str]:
-        return {0: "~/Downloads/part-00000-33cc8f2d-3f49-40bc-97eb-953ba00dda90-c000.csv"}
-
     def parse(self, sources: Dict[str, str], aux: Dict[str, DataFrame], **parse_opts) -> DataFrame:
         # Manipulate the parse options here because we have access to the columns adapter and we
         # can then limit the columns being read to save space.
